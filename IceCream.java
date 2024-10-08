@@ -7,6 +7,7 @@ public class IceCream extends IceCreamShop {
   of the boolean, hasCone and hasBowl
   */
   public IceCream () {
+    super("None", 0.0, false);
     hasCone = false;
     hasBowl = false;
   }
@@ -14,8 +15,8 @@ public class IceCream extends IceCreamShop {
   This parameterized constructor calls the superclass where flavorname and price lies
   and also uses this to set values for has cone and has bowl.
   */
-  public IceCream(String flavorName, boolean hasCone, boolean hasBowl, double price) {
-    super(flavorName, price);
+  public IceCream(String flavorName, boolean hasCone, boolean hasBowl, double price, boolean isSour) {
+    super(flavorName, price, isSour);
     this.hasCone = hasCone;
     this.hasBowl = hasBowl;
   }
@@ -23,18 +24,18 @@ public class IceCream extends IceCreamShop {
   These methods both return the values for hasCone and
   hasBowl.
   */
-  public boolean setHasCone(){
+  public boolean getHasCone(){
     return hasCone;
   }
-  public boolean setHasBowl(){
+  public boolean getHasBowl(){
     return hasBowl;
   }
 
   /* 
-  This is a toString method that helps resolve the issue of it not working correctly into the console.
+  This toString method calls the toString method from the super class and to adds the instance variables from this subclass.
   */
   public String toString(){
-    return "Flavor of Ice Cream: " + flavorName + "\nDoes Your Ice Cream have a Cone: "+hasCone+"\nDoes your Ice Cream have a Bowl: "+hasBowl+ "\nThe Price of Your Ice Cream: "+ price +"$"+"\n- - - - - - - - - - - - - - - - - - -";
+    return super.toString()+ "\nDoes Your Ice Cream have a Cone: "+hasCone+"\nDoes your Ice Cream have a Bowl: "+hasBowl+ "\n- - - - - - - - - - - - - - - - - - -";
   }
 
 }

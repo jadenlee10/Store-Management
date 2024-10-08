@@ -1,19 +1,24 @@
 public class IceCreamShop {
+  //instance variables in the superclass
+  private String flavorName;    
+  private double price;
+  private boolean isSour;
   
-  public String flavorName;    
-  public double price;
-
+// sets the initial values for the variables
   public IceCreamShop() {
-    this("plain", 0.0);
+    flavorName = "None";
+    price = 0.0;
+    isSour = false;
   }
 
-
-  public IceCreamShop(String flavorName, double price) {
+// parameterized constructor
+  public IceCreamShop(String flavorName, double price, boolean isSour) {
     this.flavorName = flavorName;
     this.price = price;
+    this.isSour = isSour;
   }
 
-
+//access modifier that returns the variables.
   public String getFlavor() {
     return flavorName;
   }
@@ -22,6 +27,11 @@ public class IceCreamShop {
     return price;
   }
 
+  public boolean getIsSour() {
+    return isSour;
+  }
+
+  //mutator method that sets the values of the instance variables
   public void setFlavor(String newFlavorName) {
     flavorName = newFlavorName;
   }
@@ -34,9 +44,16 @@ public class IceCreamShop {
       price = newPrice;
     }
   }
+  public void setIsSour(boolean newIsSour) {
+    isSour = newIsSour;
+  }
 
+  /*  
+  The toString method that will be used in other subclasses by 
+  using super method.
+  */
   public String toString(){
-    return "Flavor: " +flavorName + "\nPrice: " + price;
+    return "Flavor: " +flavorName + "\nPrice: " + price + "\nIs This Ice Cream Sour: " + isSour;
   }
 }
   
